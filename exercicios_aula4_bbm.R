@@ -45,7 +45,6 @@ ggplot(censo, aes(x = Raças_Preto)) +
 #Exercicios 4 e 5 - Gráficos de barras com totais calculados e customização
 
 #Calcular o total de pessoas por provincia
-
 provincias <-group_by(censo, PrimeiroDeProvincia)
 total_provincias <- summarize(provincias, pop_total = sum(Total_Almas))
 
