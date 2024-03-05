@@ -1,5 +1,4 @@
-#Exercicios - Aula 3
-#LEGO 1
+#Exercicios - Aula 3 - LEGO 1
 #Aluna: Beatriz Bandeira de Mello
 
 getwd()
