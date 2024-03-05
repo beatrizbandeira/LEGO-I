@@ -1,5 +1,4 @@
-#Exercícios - Aula 2
-#LEGO I
+#Exercícios - Aula 2 - LEGO I
 #Aluna: Beatriz Bandeira de Mello
 
 getwd()
@@ -9,8 +8,6 @@ require(readODS)
 require(haven)
 require(rio)
 require(tidyverse)
-
-?require
 
 #Exercício 1 - Carregando arquivos simples I
 pessoas <- read_delim("pessoas.csv") #Usei o modo de carregamento de arquivos csv
@@ -23,33 +20,22 @@ head(satisfacao) #Usei o modo de carregamento de arquivos txt
 #Exercicio 3 - Carregando arquivos simples III
 #O arquivo inventário não estava na pasta
 
-#Exercicios 4 - Carregando arquivos simples IV
+#Exercicio 4 - Carregando arquivos delimitados
 casos <- read_delim("casos_registrados.csv", delim = ",", skip = 2)
-head(casos) 
+head(casos) #Segui a instrução do capítulo e usei o skip para pular algumas linhas em branco
 
-#Segui a instrução do capítulo e usei o skip 
-#para pular algumas linhas em branco
-
-#Exercicio 5 - Carregando arquivos delimitados
+#Exercicio 5 - Carregando arquivos de outros formatos I
 censo <- read_delim("https://raw.githubusercontent.com/izabelflores/Censo_1872/main/Censo_1872_dados_tidy_versao2.csv",
                     delim = ";",
                     locale = locale(encoding = "latin1")) #Corrige problemas de acentuação
 head(censo)
 
-#Exercicio 6- Carregando arquivos de outros formatos I
-
-wvs_spss <- read_sav("wvs.sav") #Esse deu erro porque o arquivo está errado
-wvs_stata <- read_dta("wvs.dta")
-View(wvs_stata)
-
-#Exercicio 7 - Carregando arquivos de outros formatos II
-
-require(readxl)
+#Exercicio 6- Carregando arquivos de outros formatos II
 
 airbnb_arraial <- read_xlsx("dados_airbnb_arraial.xlsx")
 head(airbnb_arraial)
 
-#Exercicio 8 - Carregando microdados administrativos
+#Exercicio 7 - Carregando microdados administrativos
 
 inep_2022 <- read_delim("microdados_inep_22.csv", delim = ";")
 names(inep_2022)
