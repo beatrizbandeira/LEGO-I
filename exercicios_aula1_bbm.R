@@ -1,5 +1,6 @@
-# Exercício da Aula 1 - LEGO I
+# Script da Aula 1
 # Aluna: Beatriz Bandeira de Mello
+# LEGO I
 
 require(stringr)
 require(tidyverse)
@@ -20,7 +21,6 @@ paste("Meu nome é", meu_nome) #Paste combina textos e números
 
 nchar (meu_nome)
 raiz_nome <- sqrt (nchar (meu_nome))
-raiz_nome
 
 #Exercício 4: criando e usando vetores
 
@@ -56,10 +56,10 @@ media_idades <- mean(minhas_idades)
 media_idades
 
 x <- anos - media_idades
-x
 
 #Exercício 8: operacoes com vetores II
 
+notas
 notas_abaixo_media <- notas > media_notas
 abaixo_media <- notas[notas_abaixo_media] #Criei um objeto apenas com as notas abaixo da media de notas   
 abaixo_media
@@ -78,8 +78,6 @@ View(dados_pessoais) #Abre visualizacao em formato de excel
 
 #Exercicio 10: manipulando data.frames
 
-#data.frame
-
 capitais_sudeste = data.frame(
   capitais = c("Belo Horizonte", "São Paulo", "Rio de Janeiro", "Vitória"),
   estados = c("MG", "SP", "RJ", "ES"),
@@ -87,20 +85,20 @@ capitais_sudeste = data.frame(
 )
 
 print(capitais_sudeste)
-
 gd.pop <- capitais_sudeste$populacao_por_mil>5000
-
 capitais_sudeste[gd.pop,] #Versao modificada, o teste logico filtrou as linhas
 
-#Nesse caso, como eu tive muitas dificuldades em escrever um código mais simples, então fui quebrando 
-#em etapas menores pra tentar entender a lógica por trás dos comandos
-
 #Exercicio 11: manipulando data.frames II
-#Não tinha a base
+
+capitais_uf <- capitais_sudeste
+capitais_uf$estados <- c("Belo Horizonte", "São Paulo", "Rio de Janeiro", "Vitória") #Substitui apenas o conteúdo de uma coluna específica
+
+capitais_uf
 
 #Exercício 12: instalação e uso de pacotes
 
 require(ggplot2)
+
 ggplot(data = dados_pessoais, aes(x = anos, y = idade)) +
   geom_line() +
   geom_point()
