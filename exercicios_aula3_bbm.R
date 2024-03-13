@@ -95,4 +95,4 @@ taxa_pop_quilombola <- summarise(uf, taxa = sum(pop_quilombola)/sum(pop_total)*1
 print(taxa_pop_quilombola)
 
 taxa_pop_quilombola <- arrange(taxa_pop_quilombola, desc(taxa))
-View(taxa_pop_quilombola)
+View(taxa_pop_quilombola) #Resposta: Maranhão (MA)
