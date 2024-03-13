@@ -45,16 +45,17 @@ ggplot(censo, aes(x = Raças_Preto)) +
 #Exercicios 4 e 5 - Gráficos de barras com totais calculados e customização
 
 #Calcular o total de pessoas por provincia
+
 provincias <-group_by(censo, PrimeiroDeProvincia)
 total_provincias <- summarize(provincias, pop_total = sum(Total_Almas))
 
 #Criar gráfico de barras
-ggplot(total_provincias, aes(x = PrimeiroDeProvincia, y = pop_total/10000)) +
+ggplot(total_provincias, aes(x = reorder(PrimeiroDeProvincia, -pop_total), y = pop_total/10000)) +
   geom_col(fill = "purple",
           alpha = 0.8) +
   theme_light() +
-  coord_flip() +
   labs(title = "População por província",
        subtitle = "ESEB 2022",
        x = "Província",
-       y = "Total_População")
+       y = "Total_População") +
+  coord_flip()
