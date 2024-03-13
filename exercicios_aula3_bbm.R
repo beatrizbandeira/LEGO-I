@@ -89,6 +89,8 @@ slice(municipios, 1:5) #Alcântara (MA), Berilo (MG) e Cavalcante (GO), Serrano 
 #Exercicio 11 - Agrupamento e criação de variáveis
 
 uf <- group_by(municipios, sigla_uf)
+
+options(scipen = 999)
 taxa_pop_quilombola <- summarise(uf, taxa = sum(pop_quilombola/pop_total)/100000)
 print(taxa_pop_quilombola)
 
