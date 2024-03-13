@@ -91,8 +91,8 @@ slice(municipios, 1:5) #Alcântara (MA), Berilo (MG) e Cavalcante (GO), Serrano 
 uf <- group_by(municipios, sigla_uf)
 
 options(scipen = 999)
-taxa_pop_quilombola <- summarise(uf, taxa = sum(pop_quilombola/pop_total)/100000)
+taxa_pop_quilombola <- summarise(uf, taxa = sum(pop_quilombola)/sum(pop_total)*100000)
 print(taxa_pop_quilombola)
 
 taxa_pop_quilombola <- arrange(taxa_pop_quilombola, desc(taxa))
-print(taxa_pop_quilombola)
+View(taxa_pop_quilombola)
